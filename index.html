@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Para ti</title>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-image: url('gato1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            overflow: hidden; 
+        }
+
+        #fondo-contrasena {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('hym1.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 9999;
+        }
+
+        #contenedor-contrasena {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-family: 'Bungee', cursive;
+        }
+
+        #password-input {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .centrar-texto {
+            text-align: center;
+            position: relative;
+        }
+
+        #numero {
+            color: #FF1A1A;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        #numero:hover {
+            opacity: 0.8;
+        }
+
+        @keyframes destello {
+            0% { text-shadow: 0 0 5px rgba(255,255,0,0.5); }
+            50% { text-shadow: 0 0 20px rgba(255,255,0,1); }
+            100% { text-shadow: 0 0 5px rgba(255,255,0,0.5); }
+        }
+
+        .destellar {
+            animation-name: destello;
+            animation-duration: 0.5s;
+            animation-iteration-count: 1;
+        }
+        
+        .audio-esquina {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+          
+        .gif-esquina {
+         
+           bottom: 10px;
+           left: 10px;
+           z-index: 1;
+        }
+           
+
+        @keyframes cambio-colores {
+            0% { color: rgb(0, 206, 209); }
+            33% { color: rgb(30, 144, 255); }
+            66% { color: rgb(186, 85, 211); }
+            100% { color: rgb(75, 0, 130); }
+        }
+
+        .gif-superpuesto {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 0.7;
+            width: 300px;
+            height: auto;
+        }
+
+        .centrar-texto h1, .centrar-texto p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contenedor-gif-texto {
+            position: relative;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="fondo-contrasena">
+    <div id="contenedor-contrasena">
+        <p>ingresa la contraseña</p>
+<p>para entrar a la pagina:</p>
+        <input type="password" id="password-input">
+        <button onclick="verificarPassword()">Entrar</button>
+    </div>
+</div>
+
+<div id="contenido-pagina" style="display: none;">
+    <script>
+        const password_correcta = '2210195';
+
+        function verificarPassword() {
+            const password_ingresada = document.getElementById('password-input').value;
+            if (password_ingresada === password_correcta) {
+                document.getElementById('fondo-contrasena').style.display = 'none';
+                document.getElementById('contenido-pagina').style.display = 'block';
+                document.body.style.overflow = 'auto'; // Habilitar el scroll
+            } else {
+                alert('¡NO esa no era boba! Inténtalo de nuevo corazon muak.');
+            }
+        }
+
+        function cambiarnumero() {
+            const parrafoNumero = document.getElementById("numero");
+            parrafoNumero.style.opacity = '0';
+            setTimeout(() => {
+                parrafoNumero.innerText = "11";
+                parrafoNumero.classList.add("destellar");
+                parrafoNumero.style.opacity = '1';
+            }, 5000);
+        }
+    
+        function reproducirBesitos() {
+            const gif = document.getElementById('gatobeso-gif');
+            gif.src = 'gatobeso.gif';
+        }
+    </script>
+    
+    <div class="centrar-texto">
+        <h1 style="font-family:'Bungee', cursive;animation:cambio-colores 5s infinite;">¡FELIZ 11 MESES!</h1> 
+        <p style=color:#FFFFFF>Como estas corazon buenos dias o buenas tardes o buenas noches solo queriaa desearte un +FELIZ <span id="numero" onclick="cambiarnumero()">10</span> MESES! <span style="color:#FFA500;">TE AMUAK</span><span style="color:#800080;"> MI AMOR</span>.
+    hoy es un dia bastante especial cada vez mas cercar no solo del año si no de una vida juntos y pues nada hoy te amo mas que ayer y mañana seguramente te amare mas que hoy te amo mi amor nunca lo olvides feliz 11 meses dale click al 10 mira que no es un error</p>
+    <div class="contenedor-gif-texto">
+                <img class="gif-superpuesto" src="corazonv2.gif" alt="corazón">
+                <h3 style=color:#FFFF00;>TE AMO</h3>
+<p style=color:#FFFFFF>Sabes mi amor, han sucedido tantas cosas, hay tanto que no te he dicho. Me pregunto por qué no te puedo decir lo que siento, si tenemos tanto tiempo juntos. Hemos vivido tantas cosas: ya hemos llorado, reído, y hasta momentos íntimos hemos tenido, pero aún así no he podido.
+
+Pero, Anyerlin, si de algo estoy seguro es de que te quiero a ti, te amo a ti, todo de ti, sin importar los cambios. Y sé que te lo he dicho antes, pero en serio, TE AMO. Eres más que mi novia, mucho más
+y te quiero agradecerte</p>
+<h5 style=color:#FFFF00>GRACIAS:)</h5>
+
+            </div>
+            
+            <img src="gatobrillo.gif" alt="coco">
+            <br>
+            
+            <div class="audio-esquina">
+                <audio controls autoplay muted>
+                    <source src="San Lucas.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+    
+        </div>
+    <div class="gif-esquina">
+    <img src="gatobeso.gif" id="gatobeso-gif">
+    <button onclick="reproducirBesitos()">besitos </button>
+    </div>
+</div>
+</body>
+</html>
